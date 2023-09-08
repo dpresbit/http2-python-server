@@ -1,6 +1,19 @@
 # Relies on 'pip install h2'
-# Client will access server over http2 multiplexed connection using command
-# hyper --h2 GET http://localhost:8080/
+# Client will access server over http2 multiplexed connection using curl parallelism
+# curl --http2 --http2-prior-knowledge --parallel --config sites.txt
+# see only single TCP connection to server with 10 API calls with 'netstat -ptn'
+# Contents of 'sites.txt' file are:
+#url = "http://192.168.75.147:8001"
+#url = "http://192.168.75.147:8001"
+#url = "http://192.168.75.147:8001"
+#url = "http://192.168.75.147:8001"
+#url = "http://192.168.75.147:8001"
+#url = "http://192.168.75.147:8001"
+#url = "http://192.168.75.147:8001"
+#url = "http://192.168.75.147:8001"
+#url = "http://192.168.75.147:8001"
+#url = "http://192.168.75.147:8001"
+#url = "http://192.168.75.147:8001"
 
 import json
 import socket
